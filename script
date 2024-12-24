@@ -14,6 +14,7 @@ _G.АвтоТапание
 function АвтоТапание()
   while _G.АвтоТапание == true do
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer()
+     wait(0.00001) 
   end
  end
 
