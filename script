@@ -1,13 +1,12 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 local Window = OrionLib:MakeWindow({Name = "Солевой Бобер", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
-local Tab = Window:MakeTab({
- Name = "АвтоФарм",
+local FarmTab = Window:MakeTab({
+ Name = "AutoFarm",
  Icon = "rbxassetid://4483345998",
  PremiumOnly = false})
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 
-Tab:AddToggle({
+FarmTab:AddToggle({
  Name = "АвтоТапание",
  Default = false,
  Callback = function(Value)
@@ -17,5 +16,6 @@ Tab:AddToggle({
   end
  end 
 })
+
 end
 OrionLib:Init()
