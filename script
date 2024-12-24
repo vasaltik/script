@@ -5,6 +5,7 @@ local Tab = Window:MakeTab({
 	Name = "АвтоФарм",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false})
+
 --Values 
 _G.АвтоТапание
 
@@ -26,7 +27,6 @@ Tab:AddToggle({
                 АвтоТапание()
 	end 
 })
-
 
 
 end
