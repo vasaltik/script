@@ -5,30 +5,3 @@ local Tab = Window:MakeTab({
  Name = "АвтоФарм",
  Icon = "rbxassetid://4483345998",
  PremiumOnly = false})
-
---Values 
-_G.АвтоТапание = false
-
-
---Functions
-function АвтоТапание()
-  while _G.АвтоТапание == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer()
-    wait(0.01) 
-  end
-end
-
-
---Toggles
-Tab:AddToggle({
- Name = "АвтоТапание",
- Default = false,
- Callback = function(Value)
-  _G.АвтоТапание = Value
-  if Value then
-    АвтоТапание()
-  end
- end 
-})
-
-OrionLib:Init()
