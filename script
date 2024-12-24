@@ -11,7 +11,6 @@ FarmTab:AddToggle({
  Name = "AutoTap",
  Default = false,
  Callback = function(Value)
-  end
 })
 
 OrionLib:Init()
