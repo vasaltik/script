@@ -8,7 +8,7 @@ local FarmTab = Window:MakeTab({
 })
 
 FarmTab:AddToggle({
- Name = "АвтоТапание",
+ Name = "AutoTap",
  Default = false,
  Callback = function(Value)
   end
