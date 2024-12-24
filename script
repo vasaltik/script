@@ -4,18 +4,15 @@ local Window = OrionLib:MakeWindow({Name = "Солевой Бобер", HidePrem
 local FarmTab = Window:MakeTab({
  Name = "AutoFarm",
  Icon = "rbxassetid://4483345998",
- PremiumOnly = false})
+ PremiumOnly = false
+})
 
 FarmTab:AddToggle({
  Name = "АвтоТапание",
  Default = false,
  Callback = function(Value)
-  _G.АвтоТапание = Value
-  if Value then
-    АвтоТапание()
   end
- end 
-})
+ })
 
 end
 OrionLib:Init()
