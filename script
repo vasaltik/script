@@ -2,33 +2,33 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sev
 
 local Window = OrionLib:MakeWindow({Name = "Солевой Бобер", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
-	Name = "АвтоФарм",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false})
+ Name = "АвтоФарм",
+ Icon = "rbxassetid://4483345998",
+ PremiumOnly = false})
 
 --Values 
-_G.АвтоТапание
+_G.АвтоТапание = false
 
 
 --Functions
 function АвтоТапание()
   while _G.АвтоТапание == true do
     game:GetService("Players").LocalPlayer:WaitForChild("Library")
-     wait(0.01) 
+    wait(0.01) 
   end
- end
+end
 
 
 --Toggles
 Tab:AddToggle({
-	Name = "АвтоТапание",
-	Default = false,
-	Callback = function(Value)
-		_G.АвтоТапание - value
-                АвтоТапание()
-	end 
+ Name = "АвтоТапание",
+ Default = false,
+ Callback = function(Value)
+  _G.АвтоТапание = Value
+  if Value then
+    АвтоТапание()
+  end
+ end 
 })
 
-
-end
 OrionLib:Init()
