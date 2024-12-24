@@ -6,16 +6,6 @@ local Tab = Window:MakeTab({
  Icon = "rbxassetid://4483345998",
  PremiumOnly = false})
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
- 
-_G.АвтоТапание = false
-
-
-function АвтоТапание()
-  while _G.АвтоТапание == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer()
-    wait(0.01) 
-  end
-end
 
 Tab:AddToggle({
  Name = "АвтоТапание",
