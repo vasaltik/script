@@ -1,7 +1,36 @@
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 local Window = OrionLib:MakeWindow({Name = "Солевой Бобер", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
 local Tab = Window:MakeTab({
  Name = "АвтоФарм",
  Icon = "rbxassetid://4483345998",
  PremiumOnly = false})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
+
+
+--Values 
+_G.АвтоТапание = false
+
+
+--Functions
+function АвтоТапание()
+  while _G.АвтоТапание == true do
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer()
+    wait(0.01) 
+  end
+end
+
+
+--Toggles
+Tab:AddToggle({
+ Name = "АвтоТапание",
+ Default = false,
+ Callback = function(Value)
+  _G.АвтоТапание = Value
+  if Value then
+    АвтоТапание()
+  end
+ end 
+})
+
+OrionLib:Init()
