@@ -1,13 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 
-local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Солевой Бобер", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
-	Name = "Tab 1",
+	Name = "Тап",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 OrionLib:MakeNotification({
-	Name = "Title!",
+	Name = "Соль",
 	Content = "Notification content... what will it say??",
 	Image = "rbxassetid://4483345998",
 	Time = 5
