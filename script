@@ -12,7 +12,7 @@ FarmTab:AddToggle({
  Default = false,
  Callback = function(Value)
   end
- })
+})
 
 end
 OrionLib:Init()
