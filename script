@@ -20,7 +20,7 @@ function autoTap()
   end
 
 -- Toggles
-})
+
 FarmTab:AddToggle({
 	Name = "AutoTap",
 	Default = false,
