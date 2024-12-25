@@ -1,8 +1,2 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Соль", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
-
-
-
-
-end
-OrionLib:Init()
+local Window = OrionLib:MakeWindow({Name = "Rebirth Champions", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
