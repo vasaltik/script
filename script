@@ -5,8 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "|Rebirth Champions!|", HidePremium =
 local FarmTab = Window:MakeTab({
 	Name = "AutoFarm",
 	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+	PremiumOnly = false})
 
 _G.autoTap = true
 
@@ -15,7 +14,6 @@ function autoTap()
    while _G.autoTap == true do
        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer() 
    end
-  end
 
 
 FarmTab:AddToggle({
