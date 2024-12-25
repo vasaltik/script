@@ -13,7 +13,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 Tab:AddToggle({
-	Name = "autoTap!",
+	Name = "AutoTap",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
