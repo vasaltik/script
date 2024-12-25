@@ -1,23 +1,36 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 
 local Window = OrionLib:MakeWindow({Name = "|Rebirth Champions!|", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
-local Tab = Window:MakeTab({
+-- Tabs
+local FarmTab = Window:MakeTab({
 	Name = "AutoFarm",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-OrionLib:MakeNotification({
-	Name = "Test",
-	Content = "Testing bruh??",
-	Image = "rbxassetid://4483345998",
-	Time = 5
+-- Values
+_G.autoTap = true
+
+
+-- Functions
+
+function autoTap()
+   while _G.autoTap == true do
+       game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click4"):FireServer() 
+   end
+  end
+
+-- Toggles
 })
-Tab:AddToggle({
+FarmTab:AddToggle({
 	Name = "AutoTap",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
-	end    
+		_G.autoTap = Value 
+  end            autoTap()
 })
 
+
+
+
+end
 OrionLib:Init()
