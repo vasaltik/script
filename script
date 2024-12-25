@@ -7,11 +7,9 @@ local FarmTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
--- Values
+
 _G.autoTap = true
 
-
--- Functions
 
 function autoTap()
    while _G.autoTap == true do
@@ -19,7 +17,6 @@ function autoTap()
    end
   end
 
--- Toggles
 
 FarmTab:AddToggle({
 	Name = "AutoTap",
