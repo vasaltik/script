@@ -58,4 +58,23 @@ Tab:AddButton({
         end
     end    
 }) 
+
+      local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Box5 = ReplicatedStorage:WaitForChild("Remote"):WaitForChild("FromServerForLocal"):WaitForChild("Box"):WaitForChild("Box5")
+
+       local autoFarminggEnabled = false
+
+Tab:AddButton({
+    Name = "AutoOpenBox",
+    Callback = function() 
+    autoFarminggEnabled = not autoFarminggEnabled
+
+     print("Button pressed. AutoFarmingg:", autoFarminggEnabled") 
+        while autoFarminggEnabled and task.wait(0.01) do
+        pcall(function()
+            Box5:FireServer() -- Changed remote to Box5
+        end)
+    end
+end
+})
 OrionLib:Init()
