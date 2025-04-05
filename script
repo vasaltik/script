@@ -28,7 +28,7 @@ Tab:AddButton({
         autoFarmEnabled = not autoFarmEnabled
         print("Button pressed. AutoFarm:", autoFarmEnabled)
         
-        while autoFarmEnabled and task.wait(0.1) do
+        while autoFarmEnabled and task.wait(0.01) do
             pcall(function()
                 remote:FireServer()
             end)
@@ -51,7 +51,7 @@ Tab:AddButton({
 
      print("Button pressed. AutoFarming:", autoFarmingEnabled)
         
-        while autoFarmingEnabled and task.wait(0.1) do
+        while autoFarmingEnabled and task.wait(0.01) do
             pcall(function()
                 remote:FireServer()
             end)
