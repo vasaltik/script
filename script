@@ -47,4 +47,15 @@ local remote = game:GetService("ReplicatedStorage")
 Tab:AddButton({
     Name = "Instant Rank",
     Callback = function() 
+    autoFarmingEnabled = not autoFarmingEnabled
+
+     print("Button pressed. AutoFarming:", autoFarmingEnabled)
+        
+        while autoFarmingEnabled and task.wait(0.1) do
+            pcall(function()
+                remote:FireServer()
+            end)
+        end
+    end    
+}) 
 OrionLib:Init()
