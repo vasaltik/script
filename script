@@ -36,4 +36,23 @@ Tab:AddButton({
     end    
 })
 
+Tab:AddButton({
+    Name = "Instant Rank",
+    Callback = function()
+        local remote = game:GetService("ReplicatedStorage")
+            :WaitForChild("Remote")
+            :WaitForChild("FromLocalForServer")
+            :WaitForChild("Get")
+            :WaitForChild("rt")
+
+        print("button pressed")
+    
+        task.spawn(function()
+            while true do
+                remote:FireServer()
+                task.wait(0.01)
+            end
+        end)
+    end    
+})
 OrionLib:Init()
