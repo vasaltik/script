@@ -14,7 +14,16 @@ OrionLib:MakeNotification({
 })
 Tab:AddButton({
 	Name = "AutoFarm Strength",
-	Callback = function()
+	Callback = local remote = game:GetService("ReplicatedStorage")
+    :WaitForChild("Remote")
+    :WaitForChild("FromLocalForServer")
+    :WaitForChild("Get")
+    :WaitForChild("st")
+
+while true do
+    remote:FireServer()
+    task.wait(0.01)
+     end
       		print("button pressed")
   	end    
 })
