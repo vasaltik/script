@@ -1,31 +1,39 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua'))()
 
 local Window = OrionLib:MakeWindow({Name = "Private", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
-	Name = "AutoFarm",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "AutoFarm",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
+
 OrionLib:MakeNotification({
-	Name = "Hello!",
-	Content = "Script Successfully Loaded.",
-	Image = "rbxassetid://4483345998",
-	Time = 5
+    Name = "Hello!",
+    Content = "Script Successfully Loaded.",
+    Image = "rbxassetid://4483345998",
+    Time = 5
 })
-Tab:AddButton({
-	Name = "AutoFarm Strength",
-	Callback = local remote = game:GetService("ReplicatedStorage")
+
+local remote = game:GetService("ReplicatedStorage")
     :WaitForChild("Remote")
     :WaitForChild("FromLocalForServer")
     :WaitForChild("Get")
     :WaitForChild("st")
 
-while true do
-    remote:FireServer()
-    task.wait(0.01)
-     end
-      		print("button pressed")
-  	end    
+local autoFarmEnabled = false
+
+Tab:AddButton({
+    Name = "AutoFarm Strength",
+    Callback = function()
+        autoFarmEnabled = not autoFarmEnabled
+        print("Button pressed. AutoFarm:", autoFarmEnabled)
+        
+        while autoFarmEnabled and task.wait(0.1) do
+            pcall(function()
+                remote:FireServer()
+            end)
+        end
+    end    
 })
 
 OrionLib:Init()
