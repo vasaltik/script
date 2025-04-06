@@ -60,18 +60,18 @@ Tab:AddButton({
 })
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Box5 = ReplicatedStorage:WaitForChild("Remote"):WaitForChild("FromServerForLocal"):WaitForChild("Box"):WaitForChild("Box5")
+local Box6 = ReplicatedStorage:WaitForChild("Remote"):WaitForChild("FromServerForLocal"):WaitForChild("Box"):WaitForChild("Box6")
 
 local autoFarminggEnabled = false
 
 Tab:AddButton({
-    Name = "AutoOpenBox",
+    Name = "Auto Open Box",
     Callback = function() 
         autoFarminggEnabled = not autoFarminggEnabled
-        print("Button pressed. AutoFarmingg:", autoFarminggEnabled) -- Исправлено здесь
+        print("Button pressed. AutoFarmingg:", autoFarminggEnabled)
         while autoFarminggEnabled and task.wait(0.01) do
             pcall(function()
-                Box5:FireServer()
+                Box6:FireServer()
             end)
         end
     end
