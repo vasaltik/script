@@ -22,7 +22,7 @@ local remote = game:GetService("ReplicatedStorage")
 
 local autoFarmEnabled = false
 
-Tab:AddToggle({
+Tab:AddButton({
     Name = "AutoFarm Strength",
     Callback = function()
         autoFarmEnabled = not autoFarmEnabled
