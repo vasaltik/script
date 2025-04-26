@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua'))()
 
-local Window = OrionLib:MakeWindow({Name = "Private", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Catsense", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
     Name = "AutoFarm",
     Icon = "rbxassetid://4483345998",
@@ -76,18 +76,6 @@ Tab:AddButton({
         end
     end
 })
-
-local running = true
-
-Tab:AddButton({
-    Name = "AutoAsc",
-    Callback = function()
-        running = not running
-        while running do
-            task.wait(0.1)
-        end
-    end
-}) 
 
 local running = false
 
