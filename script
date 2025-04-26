@@ -76,4 +76,20 @@ Tab:AddButton({
         end
     end
 })
+
+local running = false
+
+Tab:AddButton({
+    Name = "AutoSacrifice (Toggle)",
+    Callback = function()
+        running = not running
+        print("AutoSacrifice:", running and "ON" or "OFF")
+        
+        while running do
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("FromLocalForServer"):WaitForChild("Get"):WaitForChild("sac2"):FireServer()
+            task.wait(0.1)
+        end
+    end
+})
+
 OrionLib:Init()
